@@ -3,13 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Password Generator</title>
+    <title>Secure Keys 💜</title>
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='style.css') }}"
     />
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='icon.png') }}" />
+    <script
+      src="https://kit.fontawesome.com/1deaab12ff.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
+
+    <nav>
+      <div class="logo">
+        SecureKeys &nbsp;<i class="fa-solid fa-key fa-bounce"></i>
+      </div>
+      <ul>
+        <li>
+          <a href="/"><i class="fa-solid fa-house"></i>&nbsp;Home</a>
+        </li>
+        <li>
+          <a href="https://rajgopalhota.netlify.app/"
+            ><i class="fa-solid fa-address-card"></i>&nbsp;About Me</a
+          >
+        </li>
+        <li>
+          <a
+            href="mailto:rajgopalhotanrg@gmail.com? subject=Contact to Rajgopal!"
+            target="_blank"
+          >
+            <i class="fa-brands fa-telegram"></i>&nbsp;Contact</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <section>
     <div class="container">
       <h1>Password Generator</h1>
 
@@ -27,7 +58,7 @@
           value="12"
           oninput="updateSliderValue(this.value)"
         />
-        <br />
+        <br /><br><br>
 
         <!-- Add checkboxes for character types -->
         <input type="checkbox" id="uppercase" name="uppercase" />
@@ -51,5 +82,11 @@
       }
     </script>
     {% block content %}{% endblock %}
+
+  </section>
+    <footer>
+      Made with ❤️ by
+      <a href="https://github.com/rajgopalhota">@RAJGOPAL HOTA</a>
+    </footer>
   </body>
 </html>

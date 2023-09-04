@@ -3,16 +3,16 @@
 {% block content %}
 <div class="container">
     <h1>Password Generated</h1>
-    <p>Your generated password is:</p>
-    <input type="text" id="password" value="{{ password }}" readonly>
-    <button onclick="copyToClipboard()">Copy to Clipboard</button>
+    <p>Secure Keys Suggested Password</p>
+    <input class="passout" type="text" id="password" value="{{ password }}" readonly onclick="copyToClipboard()">
+    <button title="Copy to clipboard" class="btn" onclick="copyToClipboard()"><i class="fa-solid fa-copy fa-fade"></i></button>
 </div>
 <script>
     function copyToClipboard() {
         var passwordInput = document.getElementById("password");
         passwordInput.select();
         document.execCommand("copy");
-        alert("Password copied to clipboard!");
+        alert("Password copied to clipboard! 💜");
     }
 </script>
 {% endblock %}
