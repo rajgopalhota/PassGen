@@ -1,0 +1,18 @@
+{% extends "home.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Password Generated</h1>
+    <p>Your generated password is:</p>
+    <input type="text" id="password" value="{{ password }}" readonly>
+    <button onclick="copyToClipboard()">Copy to Clipboard</button>
+</div>
+<script>
+    function copyToClipboard() {
+        var passwordInput = document.getElementById("password");
+        passwordInput.select();
+        document.execCommand("copy");
+        alert("Password copied to clipboard!");
+    }
+</script>
+{% endblock %}

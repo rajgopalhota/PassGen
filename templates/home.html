@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Password Generator</h1>
+
+      <form action="/generate" method="POST">
+        <!-- Add a range input for password length -->
+        <label for="length"
+          >Password Length: <span id="lengthValue">12</span></label
+        >
+        <input
+          type="range"
+          id="length"
+          name="length"
+          min="12"
+          max="32"
+          value="12"
+          oninput="updateSliderValue(this.value)"
+        />
+        <br />
+
+        <!-- Add checkboxes for character types -->
+        <input type="checkbox" id="uppercase" name="uppercase" />
+        <label for="uppercase">Include Uppercase</label><br />
+
+        <input type="checkbox" id="lowercase" name="lowercase" />
+        <label for="lowercase">Include Lowercase</label><br />
+
+        <input type="checkbox" id="numbers" name="numbers" />
+        <label for="numbers">Include Numbers</label><br />
+
+        <input type="checkbox" id="symbols" name="symbols" />
+        <label for="symbols">Include Symbols</label><br />
+
+        <button type="submit" class="btn">Generate Password</button>
+      </form>
+    </div>
+    <script>
+      function updateSliderValue(value) {
+        document.getElementById("lengthValue").textContent = value;
+      }
+    </script>
+    {% block content %}{% endblock %}
+  </body>
+</html>
